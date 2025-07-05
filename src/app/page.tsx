@@ -62,11 +62,11 @@ Crie uma imagem de encarte promocional vertical para WhatsApp com as seguintes e
 ### Estrutura da Imagem (de cima para baixo):
 
 **1. CABEÇALHO (topo):**
-- Nome "${nomeEstabelecimento}" em fonte bold, branca, centralizada
+- Nome &quot;${nomeEstabelecimento}&quot; em fonte bold, branca, centralizada
 - Fundo verde com elementos decorativos (folhas, ícones de frescor)
 
 **2. TÍTULO DA PROMOÇÃO:**
-- "OFERTAS ESPECIAIS DE ${diaPromocao.toUpperCase()} - ${dataFormatada}"
+- &quot;OFERTAS ESPECIAIS DE ${diaPromocao.toUpperCase()} - ${dataFormatada}&quot;
 - Fonte grande, bold, cor laranja (#FF8C00) com destaque visual
 - Fundo branco ou com banner
 
@@ -118,7 +118,7 @@ Crie uma imagem de encarte promocional vertical para WhatsApp com as seguintes e
     promptText += `
 **4. RODAPÉ:**
 - Endereço em fonte pequena mas legível
-- Texto: "Ofertas válidas apenas no dia ${dataFormatada} ou enquanto durarem os estoques"
+- Texto: &quot;Ofertas válidas apenas no dia ${dataFormatada} ou enquanto durarem os estoques&quot;
 - Fundo neutro
 
 ## 🎯 ELEMENTOS ESSENCIAIS
