@@ -1,20 +1,20 @@
 'use client';
 
-import React, { useState } from 'react';
 import Header from '@/components/Header';
-import ProdutoCard from '@/components/ProdutoCard';
 import OutputSection from '@/components/OutputSection';
 import PreviewSection from '@/components/PreviewSection';
-import { Produto, FormData } from '@/types';
+import ProdutoCard from '@/components/ProdutoCard';
+import { FormData, Produto } from '@/types';
+import React, { useState } from 'react';
 
 // Dados iniciais dos produtos
 const produtosIniciais: Produto[] = [
-  { id: 1, nome: 'Laranja Suco', preco: 'R$ 2,99/kg' },
-  { id: 2, nome: 'Banana', preco: 'R$ 2,99/kg' },
-  { id: 3, nome: 'Maracujá', preco: 'R$ 5,99/kg' },
-  { id: 4, nome: 'Limão', preco: 'R$ 1,99' },
-  { id: 5, nome: 'Cenoura', preco: 'R$ 1,99/kg' },
-  { id: 6, nome: 'Beterraba', preco: 'R$ 1,99/kg' },
+  { id: 1, nome: 'Laranja Suco', preco: 'R$ 2,99/kg', unidade: 'kg' },
+  { id: 2, nome: 'Banana', preco: 'R$ 2,99/kg', unidade: 'kg' },
+  { id: 3, nome: 'Maracujá', preco: 'R$ 5,99/kg', unidade: 'kg' },
+  { id: 4, nome: 'Limão', preco: 'R$ 1,99', unidade: 'un' },
+  { id: 5, nome: 'Cenoura', preco: 'R$ 1,99/kg', unidade: 'kg' },
+  { id: 6, nome: 'Beterraba', preco: 'R$ 1,99/kg', unidade: 'kg' },
 ];
 
 export default function Home() {
@@ -77,8 +77,8 @@ Crie uma imagem de encarte promocional vertical para WhatsApp com as seguintes e
       promptText += `
 - **Produtos em linha horizontal:**
 - Cada produto em um card branco com bordas arredondadas
-- **Produto 1:** ${produtosAtivos[0].nome} - ${produtosAtivos[0].preco}
-- **Produto 2:** ${produtosAtivos[1].nome} - ${produtosAtivos[1].preco}
+- **Produto 1:** ${produtosAtivos[0].nome} - ${produtosAtivos[0].preco} /${produtosAtivos[0].unidade}
+- **Produto 2:** ${produtosAtivos[1].nome} - ${produtosAtivos[1].preco} /${produtosAtivos[1].unidade}
 - Include imagens realistas dos produtos
 - Preços em fonte grande, bold, cor laranja
 - Sombra suave nos cards
@@ -87,9 +87,9 @@ Crie uma imagem de encarte promocional vertical para WhatsApp com as seguintes e
       promptText += `
 - **Produtos em linha horizontal:**
 - Cada produto em um card branco com bordas arredondadas
-- **Produto 1:** ${produtosAtivos[0].nome} - ${produtosAtivos[0].preco}
-- **Produto 2:** ${produtosAtivos[1].nome} - ${produtosAtivos[1].preco}
-- **Produto 3:** ${produtosAtivos[2].nome} - ${produtosAtivos[2].preco}
+- **Produto 1:** ${produtosAtivos[0].nome} - ${produtosAtivos[0].preco} /${produtosAtivos[0].unidade}
+- **Produto 2:** ${produtosAtivos[1].nome} - ${produtosAtivos[1].preco} /${produtosAtivos[1].unidade}
+- **Produto 3:** ${produtosAtivos[2].nome} - ${produtosAtivos[2].preco} /${produtosAtivos[2].unidade}
 - Include imagens realistas dos produtos
 - Preços em fonte grande, bold, cor laranja
 - Sombra suave nos cards
@@ -98,18 +98,18 @@ Crie uma imagem de encarte promocional vertical para WhatsApp com as seguintes e
       promptText += `
 **Parte Superior - 3 produtos em linha horizontal:**
 - Cada produto em um card branco com bordas arredondadas
-- **Produto 1:** ${produtosAtivos[0].nome} - ${produtosAtivos[0].preco}
-- **Produto 2:** ${produtosAtivos[1].nome} - ${produtosAtivos[1].preco}
-- **Produto 3:** ${produtosAtivos[2].nome} - ${produtosAtivos[2].preco}
+- **Produto 1:** ${produtosAtivos[0].nome} - ${produtosAtivos[0].preco} /${produtosAtivos[0].unidade}
+- **Produto 2:** ${produtosAtivos[1].nome} - ${produtosAtivos[1].preco} /${produtosAtivos[1].unidade}
+- **Produto 3:** ${produtosAtivos[2].nome} - ${produtosAtivos[2].preco} /${produtosAtivos[2].unidade}
 - Include imagens realistas dos produtos
 - Preços em fonte grande, bold, cor laranja
 - Sombra suave nos cards
 
 **Parte Inferior - 3 produtos em disposição triangular:**
 - Mesmo estilo visual da parte superior
-- **Produto 4:** ${produtosAtivos[3].nome} - ${produtosAtivos[3].preco}
-- **Produto 5:** ${produtosAtivos[4].nome} - ${produtosAtivos[4].preco}
-- **Produto 6:** ${produtosAtivos[5].nome} - ${produtosAtivos[5].preco}
+- **Produto 4:** ${produtosAtivos[3].nome} - ${produtosAtivos[3].preco} /${produtosAtivos[3].unidade}
+- **Produto 5:** ${produtosAtivos[4].nome} - ${produtosAtivos[4].preco} /${produtosAtivos[4].unidade}
+- **Produto 6:** ${produtosAtivos[5].nome} - ${produtosAtivos[5].preco} /${produtosAtivos[5].unidade}
 - Include imagens realistas dos produtos
 - Preços destacados em laranja
 `;
@@ -118,7 +118,7 @@ Crie uma imagem de encarte promocional vertical para WhatsApp com as seguintes e
     promptText += `
 **4. RODAPÉ:**
 - Endereço em fonte pequena mas legível
-- Texto: &quot;Ofertas válidas apenas no dia ${dataFormatada} ou enquanto durarem os estoques&quot;
+- Texto: "Ofertas válidas apenas no dia ${dataFormatada} ou enquanto durarem os estoques"
 - Fundo neutro
 
 ## 🎯 ELEMENTOS ESSENCIAIS
@@ -138,7 +138,7 @@ Crie uma imagem de encarte promocional vertical para WhatsApp com as seguintes e
 
 ### Produtos com Imagens:
 - **${numProdutos} produtos selecionados com preços reais:**
-${produtosAtivos.map((p) => `  - ${p.nome} - ${p.preco}`).join('\n')}
+${produtosAtivos.map((p) => `  - ${p.nome} - ${p.preco} /${p.unidade}`).join('\n')}
 - Cards organizados em layout otimizado
 - Cada produto deve have imagem realista, nome e preço destacado
 - Imagens de alta qualidade, bem iluminadas
@@ -150,6 +150,9 @@ ${produtosAtivos.map((p) => `  - ${p.nome} - ${p.preco}`).join('\n')}
 - Informações importantes na parte superior
 
 **Objetivo:** Criar um encarte atrativo, profissional e otimizado para compartilhamento no WhatsApp que desperte interesse e transmita qualidade dos produtos do mercado.`;
+
+    // Remover &quot; do prompt
+    promptText = promptText.replace(/&quot;/g, '"');
 
     setPrompt(promptText);
     setShowOutput(true);
@@ -164,7 +167,7 @@ ${produtosAtivos.map((p) => `  - ${p.nome} - ${p.preco}`).join('\n')}
   };
 
   // Função para atualizar produtos
-  const handleProdutoChange = (id: number, field: 'nome' | 'preco', value: string) => {
+  const handleProdutoChange = (id: number, field: 'nome' | 'preco' | 'unidade', value: string) => {
     setFormData(prev => ({
       ...prev,
       produtos: prev.produtos.map(produto =>
