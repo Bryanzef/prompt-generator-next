@@ -1,12 +1,12 @@
 'use client';
 
-import React from 'react';
 import { Produto } from '@/types';
+import React from 'react';
 
 interface ProdutoCardProps {
   produto: Produto;
   isVisible: boolean;
-  onProdutoChange: (id: number, field: 'nome' | 'preco', value: string) => void;
+  onProdutoChange: (id: number, field: 'nome' | 'preco' | 'unidade', value: string) => void;
 }
 
 const ProdutoCard: React.FC<ProdutoCardProps> = ({ 
@@ -36,6 +36,17 @@ const ProdutoCard: React.FC<ProdutoCardProps> = ({
           onChange={(e) => onProdutoChange(produto.id, 'preco', e.target.value)}
           required
         />
+      </div>
+      <div className="form-group">
+        <label>Unidade:</label>
+        <select
+          value={produto.unidade}
+          onChange={(e) => onProdutoChange(produto.id, 'unidade', e.target.value)}
+          required
+        >
+          <option value="unidade">Unidade</option>
+          <option value="kg">Kg</option>
+        </select>
       </div>
     </div>
   );
