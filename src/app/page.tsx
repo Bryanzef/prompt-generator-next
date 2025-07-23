@@ -9,12 +9,12 @@ import React, { useState } from 'react';
 
 // Dados iniciais dos produtos
 const produtosIniciais: Produto[] = [
-  { id: 1, nome: 'Laranja Suco', preco: 'R$ 2,99/kg', unidade: 'kg' },
-  { id: 2, nome: 'Banana', preco: 'R$ 2,99/kg', unidade: 'kg' },
-  { id: 3, nome: 'Maracujá', preco: 'R$ 5,99/kg', unidade: 'kg' },
+  { id: 1, nome: 'Laranja Suco', preco: 'R$ 2,99', unidade: 'kg' },
+  { id: 2, nome: 'Banana', preco: 'R$ 2,99', unidade: 'kg' },
+  { id: 3, nome: 'Maracujá', preco: 'R$ 5,99', unidade: 'kg' },
   { id: 4, nome: 'Limão', preco: 'R$ 1,99', unidade: 'un' },
-  { id: 5, nome: 'Cenoura', preco: 'R$ 1,99/kg', unidade: 'kg' },
-  { id: 6, nome: 'Beterraba', preco: 'R$ 1,99/kg', unidade: 'kg' },
+  { id: 5, nome: 'Cenoura', preco: 'R$ 1,99', unidade: 'kg' },
+  { id: 6, nome: 'Beterraba', preco: 'R$ 1,99', unidade: 'kg' },
 ];
 
 export default function Home() {
