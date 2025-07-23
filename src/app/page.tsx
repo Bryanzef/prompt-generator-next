@@ -9,12 +9,12 @@ import React, { useState } from 'react';
 
 // Dados iniciais dos produtos
 const produtosIniciais: Produto[] = [
-  { id: 1, nome: 'Laranja Suco', preco: 'R$ 2,99', unidade: 'kg' },
-  { id: 2, nome: 'Banana', preco: 'R$ 2,99', unidade: 'kg' },
-  { id: 3, nome: 'Maracujá', preco: 'R$ 5,99', unidade: 'kg' },
+  { id: 1, nome: 'Laranja Suco', preco: 'R$ 2,99/kg', unidade: 'kg' },
+  { id: 2, nome: 'Banana', preco: 'R$ 2,99/kg', unidade: 'kg' },
+  { id: 3, nome: 'Maracujá', preco: 'R$ 5,99/kg', unidade: 'kg' },
   { id: 4, nome: 'Limão', preco: 'R$ 1,99', unidade: 'un' },
-  { id: 5, nome: 'Cenoura', preco: 'R$ 1,99', unidade: 'kg' },
-  { id: 6, nome: 'Beterraba', preco: 'R$ 1,99', unidade: 'kg' },
+  { id: 5, nome: 'Cenoura', preco: 'R$ 1,99/kg', unidade: 'kg' },
+  { id: 6, nome: 'Beterraba', preco: 'R$ 1,99/kg', unidade: 'kg' },
 ];
 
 export default function Home() {
@@ -37,6 +37,9 @@ export default function Home() {
     const [year, month, day] = dateString.split('-');
     return `${day}/${month}/${year.slice(-2)}`;
   };
+
+  // Função auxiliar para exibir unidade padronizada
+  const getUnidade = (unidade: string) => unidade === 'kg' ? 'kg' : 'un';
 
   // Função para gerar o prompt
   const generatePrompt = () => {
@@ -77,8 +80,8 @@ Crie uma imagem de encarte promocional vertical para WhatsApp com as seguintes e
       promptText += `
 - **Produtos em linha horizontal:**
 - Cada produto em um card branco com bordas arredondadas
-- **Produto 1:** ${produtosAtivos[0].nome} - ${produtosAtivos[0].preco} /${produtosAtivos[0].unidade}
-- **Produto 2:** ${produtosAtivos[1].nome} - ${produtosAtivos[1].preco} /${produtosAtivos[1].unidade}
+- **Produto 1:** ${produtosAtivos[0].nome} - ${produtosAtivos[0].preco} /${getUnidade(produtosAtivos[0].unidade)}
+- **Produto 2:** ${produtosAtivos[1].nome} - ${produtosAtivos[1].preco} /${getUnidade(produtosAtivos[1].unidade)}
 - Include imagens realistas dos produtos
 - Preços em fonte grande, bold, cor laranja
 - Sombra suave nos cards
@@ -87,9 +90,9 @@ Crie uma imagem de encarte promocional vertical para WhatsApp com as seguintes e
       promptText += `
 - **Produtos em linha horizontal:**
 - Cada produto em um card branco com bordas arredondadas
-- **Produto 1:** ${produtosAtivos[0].nome} - ${produtosAtivos[0].preco} /${produtosAtivos[0].unidade}
-- **Produto 2:** ${produtosAtivos[1].nome} - ${produtosAtivos[1].preco} /${produtosAtivos[1].unidade}
-- **Produto 3:** ${produtosAtivos[2].nome} - ${produtosAtivos[2].preco} /${produtosAtivos[2].unidade}
+- **Produto 1:** ${produtosAtivos[0].nome} - ${produtosAtivos[0].preco} /${getUnidade(produtosAtivos[0].unidade)}
+- **Produto 2:** ${produtosAtivos[1].nome} - ${produtosAtivos[1].preco} /${getUnidade(produtosAtivos[1].unidade)}
+- **Produto 3:** ${produtosAtivos[2].nome} - ${produtosAtivos[2].preco} /${getUnidade(produtosAtivos[2].unidade)}
 - Include imagens realistas dos produtos
 - Preços em fonte grande, bold, cor laranja
 - Sombra suave nos cards
@@ -98,18 +101,18 @@ Crie uma imagem de encarte promocional vertical para WhatsApp com as seguintes e
       promptText += `
 **Parte Superior - 3 produtos em linha horizontal:**
 - Cada produto em um card branco com bordas arredondadas
-- **Produto 1:** ${produtosAtivos[0].nome} - ${produtosAtivos[0].preco} /${produtosAtivos[0].unidade}
-- **Produto 2:** ${produtosAtivos[1].nome} - ${produtosAtivos[1].preco} /${produtosAtivos[1].unidade}
-- **Produto 3:** ${produtosAtivos[2].nome} - ${produtosAtivos[2].preco} /${produtosAtivos[2].unidade}
+- **Produto 1:** ${produtosAtivos[0].nome} - ${produtosAtivos[0].preco} /${getUnidade(produtosAtivos[0].unidade)}
+- **Produto 2:** ${produtosAtivos[1].nome} - ${produtosAtivos[1].preco} /${getUnidade(produtosAtivos[1].unidade)}
+- **Produto 3:** ${produtosAtivos[2].nome} - ${produtosAtivos[2].preco} /${getUnidade(produtosAtivos[2].unidade)}
 - Include imagens realistas dos produtos
 - Preços em fonte grande, bold, cor laranja
 - Sombra suave nos cards
 
 **Parte Inferior - 3 produtos em disposição triangular:**
 - Mesmo estilo visual da parte superior
-- **Produto 4:** ${produtosAtivos[3].nome} - ${produtosAtivos[3].preco} /${produtosAtivos[3].unidade}
-- **Produto 5:** ${produtosAtivos[4].nome} - ${produtosAtivos[4].preco} /${produtosAtivos[4].unidade}
-- **Produto 6:** ${produtosAtivos[5].nome} - ${produtosAtivos[5].preco} /${produtosAtivos[5].unidade}
+- **Produto 4:** ${produtosAtivos[3].nome} - ${produtosAtivos[3].preco} /${getUnidade(produtosAtivos[3].unidade)}
+- **Produto 5:** ${produtosAtivos[4].nome} - ${produtosAtivos[4].preco} /${getUnidade(produtosAtivos[4].unidade)}
+- **Produto 6:** ${produtosAtivos[5].nome} - ${produtosAtivos[5].preco} /${getUnidade(produtosAtivos[5].unidade)}
 - Include imagens realistas dos produtos
 - Preços destacados em laranja
 `;
@@ -138,7 +141,7 @@ Crie uma imagem de encarte promocional vertical para WhatsApp com as seguintes e
 
 ### Produtos com Imagens:
 - **${numProdutos} produtos selecionados com preços reais:**
-${produtosAtivos.map((p) => `  - ${p.nome} - ${p.preco} /${p.unidade}`).join('\n')}
+${produtosAtivos.map((p) => `  - ${p.nome} - ${p.preco} /${getUnidade(p.unidade)}`).join('\n')}
 - Cards organizados em layout otimizado
 - Cada produto deve have imagem realista, nome e preço destacado
 - Imagens de alta qualidade, bem iluminadas
