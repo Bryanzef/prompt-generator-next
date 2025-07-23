@@ -4,6 +4,7 @@ export interface Produto {
   id: number;
   nome: string;
   preco: string;
+  unidade: 'un' | 'kg';
 }
 
 export interface FormData {
@@ -15,7 +16,7 @@ export interface FormData {
   produtos: Produto[];
 }
 
-export type DiaSemana = 
+export type DiaSemana =
   | 'Segunda Feira'
   | 'Terça Feira'
   | 'Quarta Feira'
